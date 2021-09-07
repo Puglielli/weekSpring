@@ -6,10 +6,11 @@ function App() {
   return (
     <>
       <NavBar />
-      <DataTable />
       <div className="container">
         <h1 className="text-primary">Hello World</h1>
-        </div>
+
+        <DataTable />
+      </div>
       <Footer />
     </>
   );
