@@ -1,7 +1,10 @@
 package com.puglielli.dsvenda.controllers;
 
 import com.puglielli.dsvenda.dto.SaleDTO;
+import com.puglielli.dsvenda.dto.SaleSuccessDTO;
+import com.puglielli.dsvenda.dto.SaleSumDTO;
 import com.puglielli.dsvenda.dto.SellerDTO;
+import com.puglielli.dsvenda.entities.Sale;
 import com.puglielli.dsvenda.service.SaleService;
 import com.puglielli.dsvenda.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +28,15 @@ public class SaleController {
     @GetMapping
     public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
         return ok(service.findAll(pageable));
+    }
+
+    @GetMapping(value = "/amount-by-seller")
+    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+        return ok(service.amountGroupedBySeller());
+    }
+
+    @GetMapping(value = "/success-by-seller")
+    public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
+        return ok(service.successGroupedBySeller());
     }
 }
