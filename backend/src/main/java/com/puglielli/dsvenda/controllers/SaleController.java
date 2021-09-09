@@ -1,6 +1,8 @@
 package com.puglielli.dsvenda.controllers;
 
+import com.puglielli.dsvenda.dto.SaleDTO;
 import com.puglielli.dsvenda.dto.SellerDTO;
+import com.puglielli.dsvenda.service.SaleService;
 import com.puglielli.dsvenda.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,14 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/sellers")
-public class SellerController {
+@RequestMapping(value = "/sales")
+public class SaleController {
 
     @Autowired
-    private SellerService service;
+    private SaleService service;
 
     @GetMapping
-    public ResponseEntity<List<SellerDTO>> findAll() {
-        return ok(service.findAll());
+    public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
+        return ok(service.findAll(pageable));
     }
 }

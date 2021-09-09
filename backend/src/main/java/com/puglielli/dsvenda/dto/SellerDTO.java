@@ -1,11 +1,8 @@
 package com.puglielli.dsvenda.dto;
 
-import com.puglielli.dsvenda.entities.Sale;
 import com.puglielli.dsvenda.entities.Seller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SellerDTO implements Serializable {
 
