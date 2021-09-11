@@ -1,5 +1,5 @@
-import ImgDsDark from 'assets/img/ds-dark.svg';
-import { Link } from "react-router-dom";
+import ImgDsDark from 'assets/img/ds-dark.svg'
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
@@ -12,7 +12,7 @@ const NavBar = () => {
         </nav>
       </div>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

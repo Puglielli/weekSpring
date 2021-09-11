@@ -6,7 +6,7 @@ const Footer = () => {
         <p className="text-light"><small><strong>Semana Spring React</strong><br /></small></p>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
